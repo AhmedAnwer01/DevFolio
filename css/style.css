@@ -1,0 +1,448 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+@import url(classes.css);
+
+:root {
+    --main-color: rgb(0, 120, 255);
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* <!-- ----------------------Header--------------------> */
+header {
+    /* padding: 12px; */
+    color: #fff;
+    background-color: #000000e7;
+
+    .logo a {
+        color: #fff;
+        font-size: 28px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        line-height: 33.6px;
+    }
+
+    .mobile-nav .fa-bars {
+        color: #fff;
+        font-size: 24px;
+        padding-top: 10px;
+    }
+
+    .btn>i {
+        font-size: 24px;
+    }
+
+    .btn-close>i::before {
+        content: "";
+    }
+
+    .offcanvas-body li a {
+        text-transform: uppercase;
+    }
+
+    .dd-acc,
+    .dd-acc::after,
+    .dd-acc::before,
+    .dd-acc:focus,
+    .dd-acc:not(:focus) {
+        content: "";
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        outline: none;
+    }
+
+    .w-90 {
+        width: 90% !important;
+    }
+
+    .offcanvas .nav-link {
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.4px;
+    }
+
+    .offcanvas li .active {
+        color: #78B7FF !important;
+    }
+
+    .accordion-body a {
+        text-transform: capitalize !important;
+    }
+
+    .accordion-body li {
+        padding: 10px 20px;
+    }
+
+    .accordion-item {
+        border: none;
+        padding: 0;
+    }
+
+    .navbar {
+        transition: all 0.5s;
+        z-index: 997;
+        padding: 10px 0;
+
+        .nav-link1 {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 24px;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            padding: 10px 0 10px 30px;
+            position: relative;
+
+            &>a {
+                color: #fff;
+                position: relative;
+
+                &::after, &.active::after {
+                    content: "";
+                    width: 0;
+                    height: 2px;
+                    bottom: -6px;
+                    left: 0;
+                    position: absolute;
+                    background-color: #fff;
+                    visibility: hidden;
+                    transition: all 0.3s ease-in-out 0s;
+                }
+
+                &:hover::after,
+                li:hover &::after,
+                &.active::after {
+                    visibility: visible;
+                    width: 80%;
+                }
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+
+        .dd li {
+            font-size: 14px;
+            line-height: 21px;
+            font-weight: 600;
+            min-width: 200px;
+            text-transform: none;
+        }
+
+        ul .dd-menu1 {
+            position: relative;
+
+            .dropdown1 {
+                visibility: hidden;
+                position: absolute;
+                background-color: #fff;
+                padding: 10px 0;
+                top: calc(100% + 30px);
+                transition: all 0.3s ease;
+                opacity: 0;
+            }
+
+            i {
+                font-size: 12px;
+                line-height: 21px;
+                font-weight: 600;
+            }
+
+            .dropdown1>li {
+                padding: 10px 20px;
+            }
+
+            &:hover .dropdown1 {
+                visibility: visible;
+                opacity: 1;
+                top: 100%;
+
+            }
+
+
+        }
+
+        .dropdown2 {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            background-color: #fff;
+            padding: 10px 0;
+            left: calc(100% - 30px);
+            background: #fff;
+            box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+            transition: 0.3s;
+            transform: translateY(-30px);
+
+
+            &>li {
+                padding: 10px 20px;
+            }
+
+            .dd-menu2:hover & {
+                visibility: visible;
+                opacity: 1;
+                left: 100%;
+            }
+        }
+    }
+}
+
+/* <!-- ----------------------Hero--------------------> */
+.hero {
+    background-image: linear-gradient(#00000085, #00000085), url(./../assets/hero-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    color: #fff;
+
+    h1 {
+        font-size: 72px;
+        color: #fff;
+        line-height: 86.4px;
+        margin: 0 0 24px;
+        font-weight: 600;
+    }
+
+    p {
+        text-align: center;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 60px;
+    }
+
+}
+
+/* <!-- =====================Main==================== --> */
+/* <!-- ----------------------About--------------------> */
+.skill-mf .progress {
+    background-color: #cde1f8;
+    margin: 0.5rem 0 1.2rem 0;
+    border-radius: 0;
+    height: 0.7rem;
+}
+
+/* <!-- ----------------------Services--------------------> */
+.service-box {
+    background-color: #fff;
+    padding: 2.5rem 1.3rem;
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    transition: all 500ms ease;
+
+    .s-title {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 0.4rem 0;
+    }
+
+    .service-ico {
+        margin-bottom: 1rem;
+        color: #1e1e1e;
+    }
+
+    &:hover .ico-circle {
+        color: #fff;
+        background-color: #0078ff;
+        box-shadow: 0 0 0 10px #cde1f8;
+    }
+}
+
+
+/* <!-- ----------------------Counter--------------------> */
+#counter {
+    position: relative;
+    padding: 8rem 0;
+    background-image: linear-gradient(hsla(212, 100%, 50%, 0.7), hsla(212, 100%, 50%, 0.7)), url(../assets/counters-bg.jpg);
+
+
+    .counter-box {
+        color: #fff;
+        text-align: center;
+    }
+
+    .counter-ico {
+        margin-bottom: 1rem;
+
+        .ico-circle {
+            height: 60px;
+            width: 60px;
+            line-height: 1.5;
+            box-shadow: 0 0 0 10px #cde1f8;
+        }
+    }
+
+    .counter-num .counter {
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
+
+}
+
+/* <!-- ----------------------Portfolio--------------------> */
+
+#work .card {
+    .img-box {
+        overflow: hidden;
+    }
+
+    img {
+        transition: all 1s;
+
+    }
+
+    &:hover {
+        img {
+            transform: scale(1.3);
+        }
+    }
+}
+
+.w-like span {
+    font-size: 2.5rem;
+    color: #0078FF;
+}
+
+
+/* <!-- ----------------------Testimonials--------------------> */
+.testimonials {
+    background-image: linear-gradient(hsla(212, 100%, 50%, 0.7), hsla(212, 100%, 50%, 0.7)), url(../assets/overlay-bg.jpg);
+
+    &.paralax-mf {
+        position: relative;
+        padding: 9rem 0;
+    }
+
+    .testimonial-box {
+        color: #fff;
+        text-align: center;
+    }
+
+    .carousel-indicators {
+        position: absolute;
+        bottom: -60px;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin: auto;
+        opacity: 1;
+
+        button {
+            background-color: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            height: 12px;
+            width: 12px;
+
+            &.active {
+                background-color: #fff;
+            }
+        }
+    }
+
+    .carousel-item h5 {
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin: 1rem 0;
+        display: block;
+        font-size: 1.4rem;
+    }
+
+}
+
+/* <!-- ----------------------Blog--------------------> */
+
+.badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+/* <!-- ----------------------Contact--------------------> */
+#contact {
+    background-image: linear-gradient(hsla(212, 100%, 50%, 0.7), hsla(212, 100%, 50%, 0.7)), url(/assets/overlay-bg.jpg);
+
+    .tilte {
+        font-size: 40px;
+        font-weight: 500;
+    }
+
+    .line-mf {
+        height: 3px;
+        width: 100px;
+        background-color: var(--main-color);
+        margin: 0 auto 2rem 0;
+    }
+
+    p {
+        font-size: 20px;
+        margin: 0 0 16px;
+        font-weight: 300;
+        line-height: 30px;
+    }
+
+    form {
+
+        input,
+        textarea {
+            outline: 0;
+            border: 1px solid lightgray;
+            transition: all 0.15s ease-in-out;
+
+            &:focus {
+                border: 1px solid var(--main-color);
+                box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
+            }
+        }
+
+        .btn {
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                background-color: rgb(0, 120, 255, 0.85);
+                color: #fff;
+                box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
+
+            }
+        }
+    }
+
+    .socials {
+        color: black;
+
+        &:hover.ico-circle {
+            background-color: var(--main-color);
+
+            a i {
+                color: #fff;
+            }
+        }
+
+    }
+}
+
+/* <!-- =========================Footer==================--> */
+footer {
+    text-align: center;
+    color: #fff;
+    padding: 25px 0;
+    background: #0062d3;
+
+    .credits a {
+        color: #fff;
+    }
+}
